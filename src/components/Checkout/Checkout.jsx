@@ -18,18 +18,19 @@ const Checkout = () => {
     const manejadorSubmit = (event) => {
         event.preventDefault();
 
+       
         if (!nombre || !apellido || !telefono || !email || !emailConfimarcion) {
             setError("Por favor complete los campos");
             return;
         }
 
-
+      
         if (email !== emailConfimarcion) {
             setError("Los campos del email no coinciden");
             return;
         }
 
-         
+       
 
         const orden = {
             items: carrito.map(producto => ({
@@ -44,7 +45,7 @@ const Checkout = () => {
             email
         };
 
-         
+      
         addDoc(collection(db, "ordenes"), orden)
             .then((docRef) => {
                 setOrdenId(docRef.id);
@@ -70,29 +71,29 @@ const Checkout = () => {
                 ))}
                 <hr />
 
-                <div className="form-group">
-                    <label htmlFor=""> Nombre </label>
-                    <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                <div className="form-floating mb-3">
+                    <label className="fw-lighter" for="floatingInput" htmlFor=""> Nombre </label>
+                    <input type="text" class="form-control" id="floatingInput" value={nombre} onChange={(e) => setNombre(e.target.value)} />
                 </div>
 
-                <div className="form-group">
-                    <label htmlFor=""> Apellido </label>
-                    <input type="text" value={apellido} onChange={(e) => setApellido(e.target.value)} />
+                <div className="form-floating mb-3">
+                    <label className="fw-lighter" for="floatingInput" htmlFor=""> Apellido </label>
+                    <input type="text" class="form-control" id="floatingInput" value={apellido} onChange={(e) => setApellido(e.target.value)} />
                 </div>
 
-                <div className="form-group">
-                    <label htmlFor=""> Telefono</label>
-                    <input type="text" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+                <div className="form-floating mb-3">
+                    <label className="fw-lighter" for="floatingInput" htmlFor=""> Telefono</label>
+                    <input type="text" class="form-control" id="floatingInput" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
                 </div>
 
-                <div className="form-group">
-                    <label htmlFor=""> Email </label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <div className="form-floating mb-3">
+                <label className="fw-lighter" for="floatingInput">Email</label>
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
-                <div className="form-group">
-                    <label htmlFor=""> Email Confirmación </label>
-                    <input type="email" value={emailConfimarcion} onChange={(e) => setEmailConfirmacion(e.target.value)} />
+                <div className="form-floating mb-3">
+                <label className="fw-lighter" for="floatingInput">Email Confirmacion</label>
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value={emailConfimarcion} onChange={(e) => setEmailConfirmacion(e.target.value)} />
                 </div>
 
                 {

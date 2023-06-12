@@ -17,11 +17,11 @@ const NavBar = () => {
         <nav className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink to={"/categoria/2"}> Computadoras </NavLink>
+                  <NavLink className="miBtn" activeClassName="active" to={"/categoria/2"}> Computadoras </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink to={"/categoria/3"}> Otros </NavLink>
+                  <NavLink className="miBtn" activeClassName="active" to={"/categoria/3"}> Otros </NavLink>
                 </li>
             </ul>
         </nav>

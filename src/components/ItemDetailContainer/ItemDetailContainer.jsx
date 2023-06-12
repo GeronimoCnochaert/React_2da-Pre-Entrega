@@ -10,16 +10,18 @@ const ItemDetailContainer = () => {
     const { idItem } = useParams();
 
     useEffect(() => {
-        const nuevoDoc = doc(db, "productos", idItem)
+        const nuevoDoc = doc(db, "productos", idItem);
 
-        getDoc(nuevoDoc).then(res => {
-            const data = res.data();
-            const nuevoProducto = { id: res.id, ...data }
-            setProducto(nuevoProducto)
-        })
+        getDoc(nuevoDoc)
+            .then(res => {
+                const data = res.data();
+                const nuevoProducto = { id: res.id, ...data }
+                setProducto(nuevoProducto);
+            })
             .catch(error => console.log(error))
     }, [idItem])
 
+  
     return (
         <div>
             <ItemDetail {...producto} />

@@ -16,6 +16,11 @@
 
 .cardProducto:hover {
     width: 300px;
-    background-color: #f5f5f5;
+    background-color: #fffcf2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.miBtn:hover{
+    background-color: #2b2d42;
+
 }
