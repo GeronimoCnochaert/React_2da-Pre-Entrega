@@ -1,0 +1,44 @@
+.productos-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.producto-card {
+    background-color: #a3c4f3;
+    border-radius: 10px;
+    width: 15rem;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.producto-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.producto-card button{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+
+}
+.producto-card:hover {
+    width: 300px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto-card button:hover{
+    background-color: #1e6091;
+
+}
